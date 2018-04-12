@@ -36,13 +36,13 @@ class App extends Component {
   render(){
     const { videos, selectedVideo } = this.state;
     const debouncedSearchFunc = _.debounce(term => this.handleSearchTerm(term), 300);
-    
+
     return (
       <div>
         <SearchBar onSearchTerm={debouncedSearchFunc}/>
         <div className="row">
           <VideoDetail video={selectedVideo}/>
-          <VideoList videos={videos} onSelectVideo={this.handleSelectVideo} />
+          <VideoList videos={videos} onSelectVideo={this.handleSelectVideo} selectedVideo={selectedVideo} />
         </div>
       </div>
     );
