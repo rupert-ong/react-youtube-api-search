@@ -11,20 +11,31 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      videos: []
+      videos: [],
+      selectedVideo: null
     };
-    YTSearch({ key: API_KEY, term: 'surfboards' }, data => {
-      this.setState({ videos: data });
+    YTSearch({ key: API_KEY, term: 'surfboards' }, videos => {
+      this.setState({
+        videos: videos,
+        selectedVideo: videos[0]
+      });
     });
   }
+
+  handleSelectVideo = video => {
+    this.setState({
+      selectedVideo: video
+    });
+  }
+
   render(){
-    const { videos } = this.state;
+    const { videos, selectedVideo } = this.state;
     return (
       <div>
         <SearchBar />
         <div className="row">
-          <VideoDetail video={videos[0]}/>
-          <VideoList videos={videos}/>
+          <VideoDetail video={selectedVideo}/>
+          <VideoList videos={videos} onSelectVideo={this.handleSelectVideo} />
         </div>
       </div>
     );
