@@ -8,7 +8,7 @@ const VideoListItem = ({video, onSelectVideo }) => {
 
   return (
     <li key={key} className="list-group-item" onClick={callBack}>
-      <div className="media-left"><img src={imgUrl} className="media-object" /></div>
+      <div className="media-left video-item"><img src={imgUrl} className="media-object" /></div>
       <div className="media-body"><div className="media-heading">{title}</div></div>
     </li>
   );

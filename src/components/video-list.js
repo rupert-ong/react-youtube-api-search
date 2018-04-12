@@ -3,15 +3,17 @@ import VideoListItem from './video-list-item';
 
 const VideoList = ({ videos, onSelectVideo }) => {
   return (
-    <ul className="col-md-4 list-group">
-    {
-      videos.map(video => (
-        <VideoListItem 
-          video={video}
-          onSelectVideo={onSelectVideo} />
-      )) 
-    }
-    </ul>
+    <div className="col-md-4">
+      <ul className="list-group">
+      {
+        videos.map(video => (
+          <VideoListItem 
+            video={video}
+            onSelectVideo={onSelectVideo} />
+        )) 
+      }
+      </ul>
+    </div>
   );
 }
 
