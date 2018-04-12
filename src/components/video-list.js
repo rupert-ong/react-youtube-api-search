@@ -5,7 +5,7 @@ const VideoList = ({ videos, onSelectVideo, selectedVideo }) => {
   
   return (
     <div className="col-md-4">
-      <ul className="list-group">
+      <div className="list-group">
       {
         videos.map(video => {
           const isSelectedVideo = video == selectedVideo;
@@ -18,7 +18,7 @@ const VideoList = ({ videos, onSelectVideo, selectedVideo }) => {
           );
         }) 
       }
-      </ul>
+      </div>
     </div>
   );
 }

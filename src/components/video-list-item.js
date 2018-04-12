@@ -5,15 +5,15 @@ const VideoListItem = ({video, onSelectVideo, isSelected }) => {
   const imgUrl = video.snippet.thumbnails.default.url;
   const title = video.snippet.title;
   const callBack = e => onSelectVideo(video);
-  const isSelectedClass = isSelected ? "bg-primary" : '';
+  const isSelectedClass = isSelected ? ' active' : '';
 
   return (
-    <li key={key} className={"list-group-item " + isSelectedClass} onClick={callBack}>
+    <a href="#" key={key} className={"list-group-item list-group-item-action" + isSelectedClass} onClick={callBack}>
       <div className="media">
-        <img src={imgUrl} className="mr-3" />
+        <img src={imgUrl} style={{width: 64}} className="mr-3" />
         <div className="media-body"><h6 className="mt-0">{title}</h6></div>
       </div>
-    </li>
+    </a>
   );
 };
 
