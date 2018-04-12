@@ -9,8 +9,10 @@ const VideoListItem = ({video, onSelectVideo, isSelected }) => {
 
   return (
     <li key={key} className={"list-group-item " + isSelectedClass} onClick={callBack}>
-      <div className="media-left video-item"><img src={imgUrl} className="media-object" /></div>
-      <div className="media-body"><div className="media-heading">{title}</div></div>
+      <div className="media">
+        <img src={imgUrl} className="mr-3" />
+        <div className="media-body"><h6 className="mt-0">{title}</h6></div>
+      </div>
     </li>
   );
 };
